@@ -1,7 +1,7 @@
 import React, {ReactEventHandler} from 'react';
 
 interface IAddTaskForm {
-    inputValue ?: string;
+    inputValue: string;
     task: string;
     onChange: ReactEventHandler;
     add: ReactEventHandler;
