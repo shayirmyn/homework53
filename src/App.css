@@ -55,9 +55,22 @@
 }
 
 .btnDelete {
+  display: block;
   margin: 0 20px 0 auto;
 }
 
 .taskSpan {
-  margin: 0 0 0 20px;
+  font-weight: bold;
+  margin: 0 auto 0 0;
+}
+
+.taskBlock {
+  -webkit-box-shadow: -2px 1px 46px 9px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: -2px 1px 46px 9px rgba(34, 60, 80, 0.2);
+  box-shadow: -2px 1px 46px 9px rgba(34, 60, 80, 0.2);
+  border-radius: 4px;
+  margin: 10px auto 5px auto;
+  padding: 6px 0 6px 0;
+  width: 400px;
+
 }

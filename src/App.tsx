@@ -23,7 +23,8 @@ const App = () => {
         setCurrentTask(event.target.value);
     };
 
-    const inputAddTask = () => {
+    const inputAddTask = (event: React.FormEvent) => {
+        event.preventDefault();
         if (currentTask !== "") {
             const newTask: Task = {
                 task: currentTask,
@@ -44,11 +45,6 @@ const App = () => {
         setAddTask(addTask.filter((task) => task.id !== taskId));
     };
 
-
-    const defaultEvent = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        event.preventDefault();
-    }
-
     const showTask = addTask.map(show => {
         return <Task task={show.task} key={show.id} onRemoveTask={() => deleteTask(show.id)}/>
     })
@@ -56,10 +52,9 @@ const App = () => {
     return (
         <div className="App">
             <AddTaskForm
-                         onClick={defaultEvent}
                          inputValue={currentTask}
                          onChange={inputChange}
-                         add={inputAddTask}
+                         onSubmit={inputAddTask}
             />
             {showTask}
         </div>

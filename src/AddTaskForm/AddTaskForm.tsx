@@ -3,23 +3,21 @@ import React, {ReactEventHandler} from 'react';
 interface IAddTaskForm {
     inputValue: string;
     onChange: ReactEventHandler;
-    add: ReactEventHandler;
-    onClick: ReactEventHandler;
+    onSubmit: React.FormEventHandler;
 }
 
 const AddTaskForm: React.FC<IAddTaskForm> = props => {
 
     return (
         <div className="toDoList">
-            <form className="form" onClick={props.onClick}>
+            <form className="form" onSubmit={props.onSubmit}>
                 <input className="inputAdd"
                        type="text"
                        placeholder="Add new task.."
                        value={props.inputValue}
                        onChange={props.onChange}
                 />
-                <button className="btnAdd"
-                        onClick={props.add}
+                <button type={"submit"} className="btnAdd"
                 >Add</button>
             </form>
         </div>
