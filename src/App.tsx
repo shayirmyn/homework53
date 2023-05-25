@@ -33,11 +33,6 @@ const App = () => {
 
             setAddTask([newTask, ...addTask]);
             setCurrentTask("");
-           return (
-                <div>
-                    <span>{currentTask}</span>
-                </div>
-            )
         }
     };
 
