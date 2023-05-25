@@ -31,7 +31,7 @@ const App = () => {
                 id: Date.now().toString(),
             };
 
-            setAddTask([...addTask, newTask]);
+            setAddTask([newTask, ...addTask]);
             setCurrentTask("");
            return (
                 <div>
@@ -47,7 +47,7 @@ const App = () => {
 
     const showTask = addTask.map(show => {
         return <Task task={show.task} key={show.id} onRemoveTask={() => deleteTask(show.id)}/>
-    })
+    });
 
     return (
         <div className="App">

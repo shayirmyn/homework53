@@ -8,7 +8,6 @@ interface ITask {
 
 const Task: React.FC<ITask> = props => {
 
-
     return (
         <div className="taskBlock">
             <span className="taskSpan">{props.task}</span>

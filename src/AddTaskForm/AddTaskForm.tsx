@@ -1,9 +1,9 @@
 import React, {ReactEventHandler} from 'react';
 
 interface IAddTaskForm {
-    inputValue: string;
-    onChange: ReactEventHandler;
-    onSubmit: React.FormEventHandler;
+    inputValue: string,
+    onChange: ReactEventHandler,
+    onSubmit: React.FormEventHandler,
 }
 
 const AddTaskForm: React.FC<IAddTaskForm> = props => {
