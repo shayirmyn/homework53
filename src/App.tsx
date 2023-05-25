@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import AddTaskForm from "./AddTaskForm/AddTaskForm";
+import Task from './Task/Task';
 import './App.css';
 
 
@@ -31,16 +32,36 @@ const App = () => {
 
             setAddTask([...addTask, newTask]);
             setCurrentTask("");
+           return (
+                <div>
+                    <span>{currentTask}</span>
+                </div>
+            )
         }
     };
 
+    const deleteTask = (taskId: string) => {
+        setAddTask(addTask.filter((task) => task.id !== taskId));
+    };
+
+
+    const defaultEvent = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        event.preventDefault();
+    }
+
+    const showTask = addTask.map(show => {
+        return <Task task={show.task} key={show.id} onRemoveTask={() => deleteTask(show.id)}/>
+    })
+
     return (
         <div className="App">
-            <AddTaskForm task={addTask[1].task}
+            <AddTaskForm
+                         onClick={defaultEvent}
                          inputValue={currentTask}
                          onChange={inputChange}
                          add={inputAddTask}
             />
+            {showTask}
         </div>
     );
 };

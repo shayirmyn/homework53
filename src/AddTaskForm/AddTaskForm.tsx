@@ -2,16 +2,16 @@ import React, {ReactEventHandler} from 'react';
 
 interface IAddTaskForm {
     inputValue: string;
-    task: string;
     onChange: ReactEventHandler;
     add: ReactEventHandler;
+    onClick: ReactEventHandler;
 }
 
 const AddTaskForm: React.FC<IAddTaskForm> = props => {
 
     return (
         <div className="toDoList">
-            <form className="form">
+            <form className="form" onClick={props.onClick}>
                 <input className="inputAdd"
                        type="text"
                        placeholder="Add new task.."
